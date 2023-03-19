@@ -1,0 +1,10 @@
+@layer components {
+	.cluster {
+		--_gutter: var(--gutter, var(--gutter-default));
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		gap: var(--_gutter);
+	}
+}

@@ -1,0 +1,17 @@
+@layer components {
+	.stack {
+		--stack-space: 1em;
+	}
+
+	.stack-inline {
+		--gutter: 1em;
+	}
+
+	.stack > * + * {
+		margin-block-start: var(--stack-space);
+	}
+
+	.stack-inline > * + * {
+		margin-inline-start: var(--gutter);
+	}
+}

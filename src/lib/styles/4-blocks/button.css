@@ -1,0 +1,30 @@
+@layer components {
+	.button {
+		--button-background: transparent;
+		--button-color: var(--color-text-bold);
+		align-items: center;
+		background-color: var(--button-background);
+		color: var(--button-color);
+		cursor: pointer;
+		display: inline-flex;
+		font-weight: bold;
+		gap: theme('spacing.2xs-fixed');
+		justify-content: center;
+		margin: 0 0 var(--button-depth) 0;
+		outline: none;
+		padding: 0.25em 1em;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	.button svg {
+		max-height: 1lh;
+		width: auto;
+	}
+
+	.button:disabled {
+		opacity: 0.5;
+		mix-blend-mode: luminosity;
+		pointer-events: none;
+	}
+}

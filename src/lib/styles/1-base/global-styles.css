@@ -1,0 +1,65 @@
+@layer base {
+	html {
+		scroll-padding-block-start: theme('spacing.l-xl-fixed');
+	}
+
+	html,
+	body {
+		overflow-x: -moz-hidden-unscrollable;
+		overflow-x: clip;
+	}
+
+	body {
+		background-color: var(--background-body);
+		color: var(--color-text-primary);
+		font-family: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
+		font-size: theme('fontSize.step-1');
+		line-height: 1.5;
+	}
+
+	main:focus {
+		border: 0;
+		outline: none;
+	}
+
+	.layout {
+		--layout-columns: 12;
+		--layout-gutter: theme('spacing.s-l-fixed');
+		--layout-max-width: theme('containers.2xl');
+		--layout-outer-width: calc(2 * var(--layout-gutter) + var(--layout-max-width));
+		--layout-column-width: calc((var(--layout-max-width) - (var(--layout-columns) - 1) * var(--layout-gutter)) / var(--layout-columns));
+		--layout-span: calc(var(--layout-column-width) + var(--layout-gutter));
+		display: grid;
+		grid-template-rows: 1fr auto;
+		min-height: inherit;
+	}
+
+	.layout-grid {
+		@apply @container/layout-grid;
+		display: grid;
+		gap: var(--layout-gutter);
+		grid-template-columns: repeat(var(--layout-columns), 1fr);
+	}
+
+	.layout-grid > * {
+		grid-column: auto / span 6;
+	}
+
+	@container layout-grid (min-width: theme('containers.sm')) {
+		.layout-grid > * {
+			grid-column: auto / span 4;
+		}
+	}
+
+	@container layout-grid (min-width: theme('containers.md')) {
+		.layout-grid > * {
+			grid-column: auto / span 3;
+		}
+	}
+
+	@container layout-grid (min-width: theme('containers.lg')) {
+		.layout-grid > * {
+			grid-column: auto / span 2;
+		}
+	}
+}

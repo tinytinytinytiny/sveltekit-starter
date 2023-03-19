@@ -1,0 +1,6 @@
+:root {
+	--copy-width: 65ch;
+	--gutter-default: theme('spacing.s-fixed');
+	--grid-min-item-size: 12rem;
+	--site-padding: theme('spacing.xs-xl-fixed');
+}
