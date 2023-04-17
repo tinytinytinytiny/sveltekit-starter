@@ -21,7 +21,9 @@ p,
 figure,
 blockquote,
 dl,
-dd {
+dd,
+ul,
+ol {
 	margin: 0;
 }
 
@@ -29,10 +31,6 @@ dd {
 ul[role='list'],
 ol[role='list'] {
 	list-style: none;
-}
-
-:where(ul, ol) {
-	margin-block: 0;
 }
 
 :where(ul[class]) ul {
